@@ -1,4 +1,14 @@
 <?php
+/**
+ * This file contain View class
+ */
+
+/**
+ * Description of View class
+ * 
+ * 
+ * @author frank
+ */
 class View{
     protected $header;
     protected $footer;
@@ -10,6 +20,7 @@ class View{
     private $temp_cert_check ; 
     
     private function init_class(){  
+        // initial of class
         $this->header = '' ;
         $this->footer = '' ;
         $this->header_script = null ;
@@ -30,6 +41,7 @@ EOD;
     }
     
     public function __construct() {
+        // class construct
         $this->init_class();
     }
     
@@ -37,6 +49,7 @@ EOD;
     }
     
     public function show_page( $source_page_name , $source_parameter = null){
+        // show page given with parameter given
         $return_value = '' ; 
         $header_show = '' ;
         $footer_show = '' ; 
@@ -44,21 +57,20 @@ EOD;
             $header_show = $this->header ;
             $footer_show = $this->footer ;
         }
+        // loading header
         $return_value = $return_value . $header_show;
-        
+        // loading contain
         $url_execute = $source_page_name;
         $parameter = $source_parameter ; 
-        
-        //use CURL to execute and generate View or Report
         $return_value = $return_value . $this->load_page($url_execute , $parameter );
-        
+        // loading footer
         $return_value = $return_value ."\r\n". $footer_show;
         
         return $return_value;
     }
     
     private function load_page($source_url, array $source_parameter = null){
-        //$file = file_get_contents($source_url, true);
+        //loading page
         is_null($source_parameter)?$source_parameter = array() : null ; 
         ob_start();
         foreach($source_parameter as $key => $value ){
@@ -70,30 +82,26 @@ EOD;
     }
     
     public function use_template($template_request){
+        // setting to use template or not to use 
         $this->page_template_request = $template_request ;
     }
     
     public function set_page_title($source_title='Default'){
+        // set page title
         $this->page_title = $source_title ;
     }
     
     public function set_header($source_header=''){
+        // set header
         if ( strlen($source_header) >= 1 ){
             $this->header = $source_header ; 
         }
     }
     
     public function set_footer($source_footer =''){
+        // set footer
         if ( strlen( $source_footer ) >= 1 ){
             $this->footer = $source_footer ;
         }
-    }
-    
-    public function set_footer_script($source_script ){
-        $this->footer_script[] = $source_script ; 
-    }
-    
-    public function set_header_script($source_script ){
-        $this->header_script[] = $source_script ; 
     }
 }
