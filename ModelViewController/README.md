@@ -22,6 +22,7 @@ to display it.
 HelloModel.php a simple class providing data to controller class
 HelloView.php a simple html page with some php coding as display template.
 
+mvc_call.php show how the controller call by php.
 ## Credits
 qqtan
 </content>

@@ -38,6 +38,3 @@ class HelloController extends Controller{
         echo $this->view->show_page($url_show,$this->model );
     }
 }
-// Class calling
-$temp = new HelloController();
-$temp->index();
