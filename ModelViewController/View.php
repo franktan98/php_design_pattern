@@ -1,11 +1,11 @@
 <?php
-/**
+/*
  * This file contain View class
  */
-
 /**
  * Description of View class
- * 
+ * this class will help to call related page template. and display it with data we provide
+ * act as a web page display manager
  * 
  * @author frank
  */

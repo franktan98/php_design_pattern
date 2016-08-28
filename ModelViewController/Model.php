@@ -1,10 +1,10 @@
 <?php
-/**
+/*
  * This file contain Model class
  */
 /**
  * Description of Model class
- * this class is Model base class
+ * this class is Model MVC Design Pattern base class
  *  
  * @author franktan98
  */

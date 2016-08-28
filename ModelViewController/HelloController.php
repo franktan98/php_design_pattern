@@ -1,19 +1,22 @@
 <?php
-require_once __DIR__.'/Controller.php';
-require_once __DIR__.'/View.php';
-require_once __DIR__.'/HelloModel.php';
 /**
  * This file contain HelloController
  * 
- * require Controller, View and HelloModel class.
+ * require Controller.php to provide file with Controller base class.
+ * require View.php as display manager.
+ * require HelloModel.php as data provider.
  */
 /**
  * Description of HelloController
- * this class extends Controller . basic function to get data from 
- * HelloModel model and use View Class for display.
+ * this class inherit from Controller . 
+ * basic function to get data from HelloModel model 
+ * and use View Class for web page display.
  *
  * @author franktan98
  */
+require_once __DIR__.'/Controller.php';
+require_once __DIR__.'/View.php';
+require_once __DIR__.'/HelloModel.php';
 
 class HelloController extends Controller{
     

@@ -1,10 +1,13 @@
 <?php
-/**
+/*
  * This file contain HelloModel
+ * 
+ * require Model.php to provide file with Model base class.
  */
 /**
  * Description of HelloModel
- * this class extends Model. basic function to collect data 
+ * this class inherit from Model. \
+ * basic function to collect data 
  * 
  * @author franktan98
  */
