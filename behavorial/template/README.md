@@ -1,18 +1,22 @@
-require_once __DIR__.'/KidMeal.php';
-require_once __DIR__.'/PromotionMeal.php';
+<snippet>
+  <content>
+#template pattern design sample
+php sample of my understanding about template design pattern
 
-abstract class meal_package{
+by using this design pattern 
 
-	abstract protected function prepare_drink();
-	abstract protected function prepare_food();
-	abstract protected function prepare_side_order();
 
-	public function prepare_meal(){
-		$return_meal = null ;
-		$return_meal[] = self::prepare_drink();
-		$return_meal[] = self::prepare_meal();
-		$return_meal[] = self::prepare_side_order();
+## Usage
+this design pattern let the subclass set the detail of the process. 
+then the base class call a function to process all template subclass provide.
 
-		return $return_meal;
-	}
-}
+## File 
+MealPackage.php contain a base class for Meal Package
+KidMeal.php contain a subclass extends from Meal package 
+PrpomotionMeal.php contain another subclass extends from MEal Package
+
+meal_call : php call the template design pattern 
+## Credits
+franktan98
+</content>
+</snippet>
