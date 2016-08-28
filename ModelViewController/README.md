@@ -24,9 +24,6 @@ HelloView.php a simple html page with some php coding as display template.
 
 mvc_call.php show how the controller call by php.
 ## Credits
-qqtan
+franktan98
 </content>
 </snippet>
-> Written with [StackEdit](https://stackedit.io/).
-
-
