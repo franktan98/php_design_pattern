@@ -12,8 +12,6 @@
 class View{
     protected $header;
     protected $footer;
-    protected $footer_script;
-    protected $header_script;
     private $page_title;
     private $page_contain;
     private $page_template_request ; 
@@ -23,8 +21,6 @@ class View{
         // initial of class
         $this->header = '' ;
         $this->footer = '' ;
-        $this->header_script = null ;
-        $this->footer_script = null ;
         $this->temp_cert_check = null ;
         $this->page_template_request = true ; 
         $curent_datetime = date("Y-m-d H:i:s");
