@@ -12,6 +12,16 @@ View with this sample is HTML output , in actual case we can replace it with oth
 by seperate data-display-and controller will make the code is more easy to understanding and 
 usefull for maintainance of large project.
 
+## File 
+Controller.php is a base class for Controller any extra function for base controller just edit here
+Model.php is a base class for Model any extra function for base model function just  edit here
+View.php is a simple Class to process template view we given with data we collect 
+
+HelloController.php a simple Hello Controller class collect data from HelloModel and call View class
+to display it.
+HelloModel.php a simple class providing data to controller class
+HelloView.php a simple html page with some php coding as display template.
+
 ## Credits
 qqtan
 </content>
