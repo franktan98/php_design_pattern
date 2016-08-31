@@ -1,19 +1,16 @@
 <snippet>
   <content>
-#singleton design pattern sample
-sample of my understanding of singleton design pattern 
-by using this design pattern, the resource create many time will focus on 1 static object.
-and will avoid some connection create fail, cause by too many time connection create problem.
+#prototype design pattern sample
+sample of my understanding for prototype design pattern 
+base by the understanding. clone an object is faster then create an object.
+so some of the frequence use objects. will using clone to reduce processing
+time 
 
 
 ## Usage
-use for log manage, database connection handler, and more.
-
+fequeance use object
 
 ## Credits
-qqtan
+franktan98
 </content>
 </snippet>
-> Written with [StackEdit](https://stackedit.io/).
-
-
