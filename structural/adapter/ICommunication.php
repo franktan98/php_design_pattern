@@ -1,14 +1,14 @@
 <?php
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This file contain ICommunication interface
  */
-
 /**
+ * Description of ICommunication
+ * this interface use to implement a connection extra module
+ * when add extra module no need to recoding them just implement it with adapter
+ * then we can use it 
  *
- * @author frank
+ * @author franktan98
  */
 interface ICommunication {
     //put your code here
