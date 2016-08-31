@@ -11,9 +11,6 @@ use for log manage, database connection handler, and more.
 
 
 ## Credits
-qqtan
+franktan98
 </content>
 </snippet>
-> Written with [StackEdit](https://stackedit.io/).
-
-

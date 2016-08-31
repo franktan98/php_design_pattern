@@ -1,8 +1,15 @@
 <?php
-namespace SimpleLibrary;
-
-use \PDO;
-
+/*
+ * This file contain PDO Singleton Class
+ */
+/**
+ * Description of Singleton_PDO
+ * this class is a singlton Design Pattern.
+ * this singleton function only allow to create one connection in a same time.
+ * if the database connection is difference then this class will create another handler.
+ *
+ * @author franktan98
+ */
 class Simple_PDO
 {
     // Hold an instance of the class
@@ -16,12 +23,14 @@ class Simple_PDO
     
     private function __construct($source_system,$source_host,$source_port,
             $source_database_name,$source_user,$source_password) {
+        // when construct of the class it will add connection to instance
         $this->add_connection($source_system,$source_host,$source_port,
             $source_database_name,$source_user,$source_password); 
     }
     
     private static function add_connection($source_system,$source_host,$source_port,
             $source_database_name,$source_user,$source_password){
+        // add connection information to an instance
         self::$connection_name[] = $source_database_name ;
         self::$connection_handler[$source_database_name]['system']=$source_system ;
         self::$connection_handler[$source_database_name]['host']=$source_host ;
@@ -33,6 +42,7 @@ class Simple_PDO
     }
     
     private static function connecting_database( $source_database_name ){
+        // connect when database is call
         $return_value = false;
         $port_string='';
         if ( is_null(self::$connection_handler[$source_database_name]['handler']) ){
@@ -62,8 +72,8 @@ class Simple_PDO
     
     // The singleton method
     public static function singleton($source_system,$source_host,$source_port,
-            $source_database_name,$source_user,$source_password)
-    {
+            $source_database_name,$source_user,$source_password){
+        // this is the only way to create object with this class
         if (!isset(self::$instance)) {
             self::$connection_name = array() ;         
             self::$instance = new Simple_PDO($source_system,$source_host,$source_port,
@@ -78,14 +88,14 @@ class Simple_PDO
     }
     
     public function terminate_connection($source_database_name){
+        // terminated connection
         if ( in_array( $source_database_name , self::$connection_name)){
-            //unset(self::$connection_name[$source_database_name]);
             self::$connection_handler[$source_database_name]['handler'] = null;
-            //echo '<br />'. $source_database_name .' now is null';
         }
     }
     
     public function execute_query($source_database_name , $source_sql , $source_parameter ){
+        //execute query with return of record set
         try {
             is_null(self::$connection_handler[$source_database_name]['handler'])
                 ? self::connecting_database($source_database_name)
@@ -103,6 +113,7 @@ class Simple_PDO
     }
     
     public function execute($source_database_name , $source_sql , $source_parameter) {
+        //execute query with return of total row number effect
         $return_result = 0;
         try {
             is_null(self::$connection_handler[$source_database_name]['handler'])
@@ -120,9 +131,4 @@ class Simple_PDO
         return $return_result;
     }
 }
-
-$temp = Simple_PDO::singleton('mysql','localhost',null,'shop','aaaa','aaaa');
-echo var_dump($temp->execute_query('shop','SELECT * FROM product',null) );
-
-
 ?>
